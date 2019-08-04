@@ -71,7 +71,12 @@ namespace OfflineSync.Services
             return users;
             
         }
-
+        public async void DeleteUser(string UserId)
+        {
+            var user = await userTable.Where(u => u.id == UserId).ToListAsync();
+            Synchronization();
+            await userTable.DeleteAsync(user[0]);
+        }
       
     }
 }

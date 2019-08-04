@@ -20,12 +20,20 @@ namespace OfflineSync.ViewModel
                 }
             } }
         private IUserService UserService { get; set; }
+        public ICommand DeleteCommand { get; set; }
+        public User SelectedUser { get; set; }
         public UsersViewModel()
         {
             UserService = new UserService();
+            DeleteCommand = new Command(DeleteUser);
             GetData();
         }
-       
+        private async void DeleteUser()
+        {
+            UserService.DeleteUser(SelectedUser.id);
+           await App.Current.MainPage.DisplayAlert("", "User Deleted Successfully", "OK");
+            await App.Current.MainPage.Navigation.PopModalAsync();
+        }
         private async void GetData()
         {
             await UserService.Initialize();

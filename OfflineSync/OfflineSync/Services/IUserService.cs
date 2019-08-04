@@ -12,7 +12,7 @@ namespace OfflineSync.Services
         Task<IEnumerable<User>> GetUsers();
         void AddUser(string userName);
         Task Initialize();
-
+        void DeleteUser(string UserId);
 
     }
 }

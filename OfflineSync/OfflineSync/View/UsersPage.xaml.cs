@@ -20,6 +20,11 @@ namespace OfflineSync.View
             InitializeComponent();
             BindingContext = new UsersViewModel();
         }
-       
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var vm = (UsersViewModel)(BindingContext);
+            vm.DeleteCommand.Execute((User)e.SelectedItem);
+
+        }
     }
 }
