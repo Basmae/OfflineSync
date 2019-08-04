@@ -68,9 +68,10 @@ namespace OfflineSync.Services
         {
             Synchronization();
             IEnumerable<User> users = await userTable.ToListAsync();
-            var x = 3;
             return users;
             
         }
+
+      
     }
 }

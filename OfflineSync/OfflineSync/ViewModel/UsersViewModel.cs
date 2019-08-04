@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace OfflineSync.ViewModel
 {
@@ -23,6 +25,7 @@ namespace OfflineSync.ViewModel
             UserService = new UserService();
             GetData();
         }
+       
         private async void GetData()
         {
             await UserService.Initialize();

@@ -22,7 +22,8 @@
                     HorizontalOptions="FillAndExpand"
                   HasUnevenRows="True"
                   IsPullToRefreshEnabled="True"
-                  ItemsSource="{Binding Users}">
+                  ItemsSource="{Binding Users}"
+                     >
 
                 <ListView.ItemTemplate>
                     <DataTemplate  >

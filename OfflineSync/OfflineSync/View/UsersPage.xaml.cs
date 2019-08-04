@@ -1,4 +1,5 @@
-﻿using OfflineSync.ViewModel;
+﻿using OfflineSync.Model;
+using OfflineSync.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,6 @@ namespace OfflineSync.View
             InitializeComponent();
             BindingContext = new UsersViewModel();
         }
+       
     }
 }
